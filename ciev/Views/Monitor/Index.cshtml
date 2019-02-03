@@ -1,0 +1,24 @@
+﻿@using Newtonsoft.Json
+@using ciev.Helpers
+@model ciev.Models.LogClass
+@{
+    var helper = new GenericHelper();
+    var message = ViewBag.Message ?? "";
+}
+
+<div>
+    @if (!string.IsNullOrEmpty(message))
+    {<div><h1 style="color:red;">@message</h1> </div> }
+else
+{
+    <div>
+        <div><h3>DEVICE ID:</h3></div>
+        <div>@Model.DeviceId</div>
+    </div>
+    <div>
+        <div><h3>LAST CONNECTION:</h3></div>
+        <div>Date: @Model.LastDate</div>
+        <div>Address: @Model.LastConn</div>
+    </div>
+}
+</div>
